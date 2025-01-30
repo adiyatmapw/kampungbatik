@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya | Kampung Batik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .karya-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .karya-box {
+            background-color: rgba(123, 100, 59, 0.53); /* Warna coklat transparan */
+            border-radius: 30px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .karya-box-img {
+            background-color: rgba(123, 99, 59, 0.662); /* Warna coklat transparan */
+            background-image: url('/static/images/gallery34.png');
+            border-radius: 30px;
+            background-size: cover;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .karya-box h5, 
+        .karya-box p,
+        .karya-box-img h5,
+        .karya-box-img p {
+            color: white;
+        }
+
+        .img-rounded {
+            border-radius: 20px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6c3a14;">
+        <div class="container">
+            <a class="navbar-brand" href="/">Kampung Batik Difabel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('profil') }}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('sejarah') }}">Sejarah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('wisata') }}">Wisata</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('karya') }}">Karya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('petawisata') }}">Peta Wisata</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="hero-header py-5"></section>
+
+    <!-- Dinding Mural Batik Section -->
+    <section class="py-5">
+        <div class="container karya-box-img reveal">
+            <h2 class="karya-title">DINDING MURAL BATIK</h2>
+            <div class="row g-4">
+                {% for img, title, desc in [
+                    ("gallery21.png", "MEGA MENDUNG", "Motif batik berasal dari Cirebon yang ditandai dengan pola awan berlapis-lapis dalam gradasi warna biru dan jingga melambangkan ketenangan dan kesabaran."),
+                    ("gallery22.png", "KONTEMPORER", "Penggabungan dari beberapa elemen geometris serta organik dengan menggabungkan elemen tradisional dan sentuhan modern yang dinamis, menunjukkan ekspresi kreatif dan kebebasan."),
+                    ("gallery23.png", "PARANG", "Motif klasik dalam batik Indonesia yang berasal dari keraton Yogyakarta dan Solo. Motif Parang memiliki pola diagonal yang menyerupai ombak atau bilah pedang, melambangkan kekuatan, keberanian, dan kesinambungan.")
+                ] %}
+                <div class="col-md-4 text-center reveal">
+                    <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ title }}" class="img-fluid img-rounded mb-3">
+                    <h5 class="fw-bold">{{ title }}</h5>
+                    <p>{{ desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Batik Section -->
+    <section class="py-5">
+        <div class="container karya-box reveal">
+            <h2 class="karya-title">BATIK</h2>
+            <div class="row g-4">
+                {% for img in [
+                    "gallery24.png", "gallery25.png", "gallery26.png", 
+                    "gallery27.png", "gallery28.png", "gallery29.png", 
+                    "gallery30.png", "gallery31.png", "gallery32.png"
+                ] %}
+                <div class="col-md-4 text-center reveal">
+                    <img src="{{ url_for('static', filename='images/' + img) }}" alt="Batik" class="img-fluid img-rounded">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <button id="scrollTopBtn" class="btn btn-secondary">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <!-- Footer -->
+    <footer class="text-white py-5" style="background-color: #b4753c;">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Bagian Sosial Media -->
+                <div class="col-md-6 mb-3 mb-md-0 footer-social">
+                    <p class="mb-2">Follow us On</p>
+                    <a href="https://www.facebook.com/humasjabarjuara?mibextid=ZbWKwL" target="_blank" class="text-white me-3"><i class="bi bi-facebook" style="font-size: 1.8rem;"></i></a>
+                    <a href="https://x.com/humasjabar/status/1839137183107612986?t=mVtIqNFWgYdyplrafI_iSA&s=19" target="_blank" class="text-white me-3"><i class="bi bi-twitter" style="font-size: 1.8rem;"></i></a>
+                    <a href="https://www.instagram.com/batikgriyadifabel" target="_blank" class="text-white"><i class="bi bi-instagram" style="font-size: 1.8rem;"></i></a>
+                </div>
+
+                <!-- Bagian Informasi Kontak -->
+                <div class="col-md-6">
+                    <p class="mb-1">@batikgriyadifabel</p>
+                    <p class="mb-1">www.batikgriyadifabel.com</p>
+                    <p class="mb-1">batikgriyadifabel@gmail.com</p>
+                    <p class="mb-0">0887753554433</p>
+                </div>
+            </div>
+
+            <!-- Bagian Copyright -->
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2024 Kampung Kreatif Batik Difabel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animasi scroll reveal
+        document.addEventListener('DOMContentLoaded', function () {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            revealElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+        <script>
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.style.display = 'flex';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    </script>
+</body>
+</html>

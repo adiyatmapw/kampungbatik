@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil | Kampung Batik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+</style>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Kampung Batik Difabel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('profil') }}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('sejarah') }}">Sejarah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('wisata') }}">Wisata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('karya') }}">Karya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('petawisata') }}">Peta Wisata</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="hero-header"></section>
+
+<!-- Profil Section -->
+<section class="py-5 reveal">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Kolom untuk gambar -->
+            <h2 class="kampung-title text-center">PROFIL</h2>
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for('static', filename='images/KKBD.svg') }}" alt="Kampung Kreatif Batik Difabel" class="img-fluid mb-4" style="max-width: 100%;">
+            </div>
+            <!-- Kolom untuk teks profil -->
+            <div class="col-md-6">
+                <p class="mt-3 profil-paragraph">
+                    Pada Wisata Kampung Kreatif Batik Difabel ini terdapat beberapa kegiatan yaitu layanan pijat, kafe, workshop, gazebo 
+                    untuk tempat khusus pengeringan kain batik yang sudah dibuat, perpustakaan, ruang keterampilan tempat olah pangan, 
+                    ruang keterampilan (handy craft), toko penjualan batik griya difabel, sosialisasi untuk belajar bahasa isyarat, 
+                    serta spot foto berupa mural bernuansa batik.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Visi & Misi Section -->
+<section class="py-5 reveal">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Kolom untuk gambar dan judul -->
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for('static', filename='images/visimisi.svg') }}" alt="Visi & Misi" class="img-fluid mb-3" style="max-width: 400px;">
+                <h2 class="visimisititle">PUSAT PELAYANAN SOSIAL GRIYA HARAPAN DIFABEL</h2>
+            </div>
+            <!-- Kolom untuk isi Visi & Misi -->
+            <div class="col-md-6">
+                <div class="visi-misi-box p-4 rounded">
+                    <h3>VISI</h3>
+                    <p>
+                        Menciptakan ekosistem ekonomi inklusif dan berkelanjutan yang memberdayakan difabel melalui seni batik, sekaligus melestarikan,
+                         mempromosikan kekayaan budaya Jawa Barat dan menjadi proyek percontohan bagi daerah lain dalam pemberdayaan disabilitas melalui 
+                         unit-unit usaha disabilitas
+                    </p>
+                    <h3>MISI</h3>
+                    <ol>
+                        <li><b>Pemberdayaan</b>: Memberikan kesempatan bagi difabel untuk mengembangkan keterampilan dalam membuat batik, memberikan pelayanan jasa, dan menampilkan bakat mereka.</li>
+                        <li><b>Pelestarian Budaya</b>: Mempromosikan warisan batik yang beragam dari Jawa Barat melalui mural dan kegiatan edukasi.</li>
+                        <li><b>Pengembangan Ekonomi</b>: Menciptakan peluang ekonomi yang berkelanjutan bagi komunitas difabel melalui produksi dan penjualan berbagai produk batik.</li>
+                        <li><b>Edukasi dan Rekreasi</b>: Menyediakan tempat praktik kerja bagi para klien disabilitas dan  lokakarya interaktif, tur edukasi bagi pengunjung untuk belajar tentang batik dan berinteraksi dengan komunitas difabel</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Kemitraan dan Kolaborasi Section -->
+        <section class="py-5 reveal">
+            <div class="container">
+                <div class="kemitraan-box p-4 rounded">
+                    <h2 class="text-center sub-title">KEMITRAAN DAN KOLABORASI</h2>
+                    <p>Pengembangan Kampoeng Kreatif Batik Difable adalah hasil kolaborasi dari berbagai pihak, termasuk : </p>
+                    <ol>
+                        <li><b>Dinas Sosial Jawa Barat</b>: Memimpin inisiatif ini dan menyediakan dukungan serta sumber daya yang diperlukan.</li>
+                        <li><b>Sokoguru</b>: Sebuah media dan ekosistem UMKM di Indonesia yang berperan penting dalam mempromosikan proyek ini dan memfasilitasi keterlibatan para pemangku kepentingan.</li>
+                        <li><b>PT Mowilex Indonesia</b>: Perusahaan manufaktur yang menerapkan produksi cat yang berkontribusi menyerahkan CSR Cat untuk mural dinding dan bangunan proyek ini.</li>
+                        <li><b>Telkom University</b>: Universitas yang berkontribusi mengerahkan dosen dan mahasiswanya dalam menciptakan karya desain exterior dan mural.</li>
+                        <li><b>Universitas Teknologi Bandung</b>: Universitas yang berkontribusi mengerahkan dosen dan mahasiswanya dalam menciptakan karya mural.</li>
+                        <li><b>Berbagai Pemangku Kepentingan</b>: Termasuk instansi pemerintah, organisasi nirlaba, dan mitra sektor swasta yang semuanya berkontribusi dalam merealisasikan proyek ini.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Dampak Section -->
+        <section class="py-5 reveal">
+            <div class="container">
+                <div class="dampak-box p-4 rounded">
+                    <h2 class="text-center sub-title">DAMPAK</h2>
+                    <p>Proyek Kampung Kreatif Batik Difable ini memiliki beberapa tujuan yang menyebabkan beberapa dampak sebagai berikut:</p>
+                    <ol>
+                        <li>Memberdayakan klien difabel dengan memberikan mereka ruang berupa praktik kerja dan mata pencaharian yang berkelanjutan dan kesempatan untuk berekspresi.</li>
+                        <li>Melestarikan dan mempromosikan kekayaan sejarah nusantara dan budaya Jawa Barat.</li>
+                        <li>Mendorong inklusi sosial dan kesadaran dengan menciptakan ruang di mana orang dari segala kemampuan dapat belajar, berinteraksi, dan menghargai seni batik.</li>
+                    </ol>
+                    <p>Kampoeng Kreatif Batik Difabel adalah bukti nyata dari kekuatan kolaborasi dan inklusivitas, bertujuan untuk menciptakan masa depan yang lebih cerah dan berkelanjutan bagi komunitas difabel di Jawa Barat.</p>
+                </div>
+            </div>
+        </section>
+        <button id="scrollTopBtn" class="btn btn-primary">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        
+    <!-- Footer -->
+    <footer class="text-white py-5 reveal" style="background-color: #b4753c;">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Bagian Sosial Media -->
+                <div class="col-md-6 mb-3 mb-md-0 footer-social">
+                    <p class="mb-2">Follow us On</p>
+                    <a href="https://www.facebook.com/humasjabarjuara?mibextid=ZbWKwL" target="_blank" class="text-white me-3"><i class="bi bi-facebook" style="font-size: 1.8rem;"></i></a>
+                    <a href="https://x.com/humasjabar/status/1839137183107612986?t=mVtIqNFWgYdyplrafI_iSA&s=19" target="_blank" class="text-white me-3"><i class="bi bi-twitter" style="font-size: 1.8rem;"></i></a>
+                    <a href="https://www.instagram.com/batikgriyadifabel" target="_blank" class="text-white"><i class="bi bi-instagram" style="font-size: 1.8rem;"></i></a>
+                </div>
+
+                <!-- Bagian Informasi Kontak -->
+                <div class="col-md-6">
+                    <p class="mb-1">@batikgriyadifabel</p>
+                    <p class="mb-1">www.batikgriyadifabel.com</p>
+                    <p class="mb-1">batikgriyadifabel@gmail.com</p>
+                    <p class="mb-0">0887753554433</p>
+                </div>
+            </div>
+
+            <!-- Bagian Copyright -->
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2024 Kampung Kreatif Batik Difabel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+    });
+    </script>
+    <script>
+            const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    </script>
+    <script>
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.style.display = 'flex';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    </script>
+</body>
+</html>
