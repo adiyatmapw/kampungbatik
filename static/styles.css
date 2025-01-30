@@ -1,0 +1,269 @@
+body {
+    font-family: 'Georgia', serif;
+    background: url('images/Background.png') repeat center center;
+    background-size: cover;
+    background-color: #6c3a14;
+}
+
+p{
+    color: white;
+}
+
+img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.profil-paragraph {
+    font-size: 1.25rem; /* Memperbesar ukuran teks */
+    line-height: 1.8;   /* Menambahkan jarak antar baris agar lebih mudah dibaca */
+    text-align: right;  /* Membuat teks rata kanan */
+    color: #ffffff; 
+}
+
+.paragraph {
+    font-size: 1.25rem; /* Memperbesar ukuran teks */
+    line-height: 1.8;   /* Menambahkan jarak antar baris agar lebih mudah dibaca */
+    text-align: justify;  /* Membuat teks rata kanan */
+    color: #ffffff; 
+}
+
+.navbar {
+    background-color: #a0522d; /* Brown */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+/* Gaya untuk link navbar */
+.navbar .nav-link {
+    color: #ffffff; /* Warna teks default */
+    font-weight: normal;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Gaya untuk link navbar saat hover */
+.navbar .nav-link:hover {
+    color: #ffc107; /* Warna kuning saat hover */
+    font-weight: bold; /* Bold saat hover */
+    transition: color 0.2s ease, font-weight 0.3s ease;
+}
+
+/* Gaya untuk link navbar yang aktif */
+.navbar .nav-link.active {
+    color: #ffc107; /* Warna kuning untuk halaman aktif */
+    font-weight: bold; /* Bold untuk halaman aktif */
+    border-bottom: 2px solid #ffc107; /* Garis bawah untuk menandai halaman aktif */
+}
+
+
+/* Mengatur style untuk teks "Welcome" */
+.welcome-title {
+    font-family: 'Seaweed Script', cursive;
+    font-size: 4rem;
+    color: #864924; /* Warna coklat */
+}
+
+/* Mengatur style untuk teks "KAMPUNG KREATIF BATIK DIFABEL JAWA BARAT" */
+.kampung-title {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    color: #864924; /* Warna coklat */
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.promosihasil{
+    font-family: 'Georgia', serif;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.promo-card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.promo-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-title, .card-text {
+    font-size: 0.9rem;
+}
+
+.hero-header {
+    background: url('images/header.png') no-repeat center center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 300px; /* Tinggi header bisa disesuaikan */
+}
+
+
+.hero-header h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.welcome-text {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #864924; /* Warna coklat */
+    font-weight: bold;
+    margin-top: 30px; /* Untuk mengurangi jarak dengan header */
+}
+
+.address-box {
+    background-color: #864924; /* Warna coklat */
+    color: #ffffff; /* Warna teks putih */
+    padding: 15px 20px;
+    border-radius: 47px; /* Rounded rectangle dengan radius 47px */
+    display: inline-block;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+.carousel-item img {
+    height: 400px; /* Sesuaikan tinggi gambar */
+    object-fit: cover; /* Agar gambar memenuhi area tanpa distorsi */
+    border-radius: 20px; /* Membuat sudut gambar membulat */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+/* Profil Title */
+.profil-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    line-height: 87px;
+    background-image: linear-gradient(to right, #0EDBFF, #C3C3C3, #E40017, #FF00BF, #FFFFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 6px 12px 0 rgba(0, 0, 0, 0.5);
+}
+
+.visimisititle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #E40017; /* Warna merah untuk latar */
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+/* Visi & Misi Section */
+.visi-misi-box {
+    background-color: rgba(217, 217, 217, 0.443); /* Background putih transparan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.visi-misi-box h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6c3a14;
+}
+
+.visi-misi-box li, .visi-misi-box p{
+    color: #a0522d; 
+}
+
+.visi-misi-box, .kemitraan-box, .dampak-box {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    transition: transform 0.3s ease;
+}
+
+.visi-misi-box:hover, .kemitraan-box:hover, .dampak-box:hover {
+    transform: translateY(-10px); /* Efek melayang saat hover */
+}
+
+
+/* Kemitraan dan Dampak Section */
+.kemitraan-box,
+.dampak-box {
+    background-color: rgba(54, 18, 18, 0.28); /* Background coklat transparan */
+    color: white;
+}
+
+.sub-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 100;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+footer {
+    background-color: #6c3a14;
+    color: white;
+}
+
+/* Animasi fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Setelah elemen muncul */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in img {
+    transition: transform 0.3s ease;
+}
+
+.fade-in img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Hover effect pada ikon sosial media */
+.footer-social a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2); /* Membesarkan ikon saat hover */
+}
+
